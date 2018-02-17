@@ -41,7 +41,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-<<<<<<< HEAD
   - name: Player
     uniqueID: 752824643
     locked: 0
@@ -50,14 +49,4 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 144568087
-=======
-  - name: Background
-    uniqueID: 3649381475
-    locked: 0
-  - name: Player
-    uniqueID: 1853615247
-    locked: 0
-  - name: Foreground
-    uniqueID: 4051217031
->>>>>>> e84caa5d1fb03651ec654e0ff488c60fa6a320cd
     locked: 0
