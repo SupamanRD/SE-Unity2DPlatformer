@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour {
         rb2d = GetComponent<Rigidbody2D>();
 	}
 
+    //FixedUpdate and HandleMovement implemented by Cameron and Landon
     //updates constantly. passes to HandleMovement
     private void FixedUpdate()
     {
@@ -47,7 +48,7 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
-
+    //HandleInput and IsGrounded implemented by Rutherford and Abby
     private void HandleInput()
     {
         if(Input.GetKeyDown(KeyCode.Space))
