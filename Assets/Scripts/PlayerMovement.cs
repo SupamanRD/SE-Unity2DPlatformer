@@ -6,9 +6,12 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
 
+ 
+
     [SerializeField]            //allows us to edit value within Unity editor
     public float speed = 1f;    //player movement speed
     private float horizontal;
+    private bool facingRight;
     [SerializeField]
     private Transform[] groundPoint;    //array for ground collisions. doesn't work yet
     [SerializeField]
@@ -21,10 +24,15 @@ public class PlayerMovement : MonoBehaviour {
     private float jump_speed;
     [SerializeField]
     private float jump_force;
+
+    private Animator playerAnimator;
     private Rigidbody2D rb2d;
-	// Use this for initialization
+	
+    // Use this for initialization
 	void Start () {
+        facingRight = true;
         rb2d = GetComponent<Rigidbody2D>();
+        playerAnimator = GetComponent<Animator>();
 	}
 
     //FixedUpdate and HandleMovement implemented by Cameron and Landon
@@ -35,6 +43,7 @@ public class PlayerMovement : MonoBehaviour {
         grounded = IsGrounded();
 
         HandleMovement(horizontal);
+        flip(horizontal);
     }
 
     //Handles all major player movement functionality
@@ -48,6 +57,8 @@ public class PlayerMovement : MonoBehaviour {
             rb2d.AddForce(new Vector2(0, jump_force));
             jump = false;
         }
+
+        playerAnimator.SetFloat("movSpeed", Mathf.Abs(horizontal));
     }
 
     //HandleInput and IsGrounded implemented by Rutherford and Abby
@@ -76,5 +87,18 @@ public class PlayerMovement : MonoBehaviour {
             }
         }
         return false;
+    }
+
+    private void flip(float horizontal)
+    {
+        if (horizontal > 0 && !facingRight || horizontal < 0 && facingRight)
+        {
+            facingRight = !facingRight;
+            Vector3 theScale = transform.localScale;
+
+            theScale.x *= -1;
+
+            transform.localScale = theScale;
+        }
     }
 }
