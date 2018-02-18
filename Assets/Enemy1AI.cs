@@ -1,4 +1,5 @@
-﻿using Pathfinding;
+//* Implemented by Cameron and Landon*//
+using Pathfinding;
 using UnityEngine;
 using System.Collections;
 
@@ -23,7 +24,7 @@ public class Enemy1AI : MonoBehaviour {
     //The AI's speed per second
     public float speed = 300f;
     public ForceMode2D fMode;
-    
+
     [HideInInspector]
     public bool pathHasEnded = false;
 
@@ -59,7 +60,7 @@ public class Enemy1AI : MonoBehaviour {
         }
 
         seeker.StartPath(transform.position, target.position, OnPathComplete);
-        
+
         yield return new WaitForSeconds(1f / updateRate);
 
         StartCoroutine(UpdatePath());

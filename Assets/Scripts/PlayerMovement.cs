@@ -1,4 +1,6 @@
-﻿using System.Collections;
+//implemented by Rutherford and Landon
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -31,7 +33,7 @@ public class PlayerMovement : MonoBehaviour {
     {
         horizontal = Input.GetAxis("Horizontal");
         grounded = IsGrounded();
-        
+
         HandleMovement(horizontal);
     }
 

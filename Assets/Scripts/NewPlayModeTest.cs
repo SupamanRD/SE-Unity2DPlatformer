@@ -1,4 +1,6 @@
 ﻿//Tests that the player object spawns and comes to a rest
+//implemented by Cameron, Abby, Rutherford//
+
 using UnityEngine;
 using UnityEngine.TestTools;
 using NUnit.Framework;
@@ -9,13 +11,13 @@ public class NewPlayModeTest {
 	[UnityTest]
 	public IEnumerator TestSpawn() {
         SetupScene();
-       
+
         yield return new WaitForSeconds(5);
         if(GameObject.Find("Player(Clone)").GetComponent<Rigidbody2D>().velocity.magnitude < .0001)
         {
-            yield break;     
+            yield break;
         }
-        
+
         Assert.Fail();
 
 	}
@@ -26,4 +28,3 @@ public class NewPlayModeTest {
         MonoBehaviour.Instantiate(Resources.Load<GameObject>("Player"));
     }
 }
-
