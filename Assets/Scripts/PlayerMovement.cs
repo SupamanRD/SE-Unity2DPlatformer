@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour {
     //HandleInput and IsGrounded implemented by Rutherford and Abby
     private void HandleInput()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+		if(Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Jump"))
         {
             jump = true;
         }
