@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour {
     {
         horizontal = Input.GetAxis("Horizontal");
         grounded = IsGrounded();
-        HandleInput();
+        
         HandleMovement(horizontal);
     }
 
@@ -38,10 +38,12 @@ public class PlayerMovement : MonoBehaviour {
     private void HandleMovement(float horizontal)
     {
         rb2d.velocity = new Vector2(horizontal * speed, rb2d.velocity.y);
-        if(grounded && jump)
+        HandleInput();
+        if (grounded && jump)
         {
             grounded = false;
             rb2d.AddForce(new Vector2(0, jump_force));
+            jump = false;
         }
     }
 
