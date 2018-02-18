@@ -357,7 +357,7 @@ GameObject:
   - component: {fileID: 519928698}
   - component: {fileID: 519928703}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: BlockEnemyType1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -476,8 +476,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 519928697}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.02, y: -2.74, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 5.493, y: -2.512, z: 0}
+  m_LocalScale: {x: 1.7486924, y: 1.7235454, z: 1.773839}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -635,8 +635,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 926526338}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.651, y: -4.027, z: 0}
-  m_LocalScale: {x: 46.761955, y: 1.95656, z: 0.99919057}
+  m_LocalPosition: {x: 0.651, y: -4.009, z: 0}
+  m_LocalScale: {x: 46.761955, y: 1.9924839, z: 0.99919057}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
