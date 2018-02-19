@@ -77,12 +77,12 @@ public class PlayerMovement : MonoBehaviour {
     //Handles keystroke inputs for different actions
     private void HandleInput()
     {
-		if(Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Jump"))
+		if(Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire1"))
         {
             jump = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Z) || Input.GetButtonDown("Fire3"))
         {
             attack = true;
         }
