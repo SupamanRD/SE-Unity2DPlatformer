@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour {
         horizontal = Input.GetAxis("Horizontal");
         grounded = IsGrounded();
 
-
+        
         HandleMovement(horizontal);
         HandleAttacks();
         Reset();
