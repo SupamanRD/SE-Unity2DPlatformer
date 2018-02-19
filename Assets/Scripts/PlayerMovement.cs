@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour {
     private float jump_speed;
     [SerializeField]
     private float jump_force;
-
+    private bool attack;
     private Animator playerAnimator;
     private Rigidbody2D rb2d;
 	
@@ -42,7 +42,10 @@ public class PlayerMovement : MonoBehaviour {
         horizontal = Input.GetAxis("Horizontal");
         grounded = IsGrounded();
 
+
         HandleMovement(horizontal);
+        HandleAttacks();
+        Reset();
         flip(horizontal);
     }
 
@@ -61,15 +64,30 @@ public class PlayerMovement : MonoBehaviour {
         playerAnimator.SetFloat("movSpeed", Mathf.Abs(horizontal));
     }
 
-    //HandleInput and IsGrounded implemented by Rutherford and Abby
+    //HandleInput, HandleAttacks and IsGrounded implemented by Rutherford and Abby
+    //Handles attack variations
+    private void HandleAttacks()
+    {
+        if (attack)
+        {
+            playerAnimator.SetTrigger("attack");
+        }
+    }
+    
+    //Handles keystroke inputs for different actions
     private void HandleInput()
     {
 		if(Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Jump"))
         {
             jump = true;
         }
-    }
 
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            attack = true;
+        }
+    }
+    //Detects when player is on the ground
     private bool IsGrounded()
     {
         if(rb2d.velocity.y <= 0)
@@ -88,7 +106,7 @@ public class PlayerMovement : MonoBehaviour {
         }
         return false;
     }
-
+    // Rotates player animation
     private void flip(float horizontal)
     {
         if (horizontal > 0 && !facingRight || horizontal < 0 && facingRight)
@@ -100,5 +118,10 @@ public class PlayerMovement : MonoBehaviour {
 
             transform.localScale = theScale;
         }
+    }
+    // Reset animation values
+    private void Reset()
+    {
+        attack = false;
     }
 }
