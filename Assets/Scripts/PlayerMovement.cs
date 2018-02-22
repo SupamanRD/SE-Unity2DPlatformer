@@ -4,9 +4,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerMovement : MonoBehaviour {
 
- 
+
 
     [SerializeField]            //allows us to edit value within Unity editor
     public float speed = 1f;    //player movement speed
@@ -27,13 +28,15 @@ public class PlayerMovement : MonoBehaviour {
     private bool attack;
     private Animator playerAnimator;
     private Rigidbody2D rb2d;
-	
+
+   
+
     // Use this for initialization
-	void Start () {
+    void Start() {
         facingRight = true;
         rb2d = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
-	}
+    }
 
     //FixedUpdate and HandleMovement implemented by Cameron and Landon
     //updates constantly. passes to HandleMovement
@@ -42,7 +45,7 @@ public class PlayerMovement : MonoBehaviour {
         horizontal = Input.GetAxis("Horizontal");
         grounded = IsGrounded();
 
-        
+
         HandleMovement(horizontal);
         HandleAttacks();
         Reset();
@@ -73,13 +76,20 @@ public class PlayerMovement : MonoBehaviour {
             playerAnimator.SetTrigger("attack");
         }
     }
-    
+
     //Handles keystroke inputs for different actions
     private void HandleInput()
     {
-		if(Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire1"))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire1"))
         {
             jump = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.X) || Input.GetButtonDown("Fire2"))
+        {
+
+            //To Spawn Ducks
+
         }
 
         if (Input.GetKeyDown(KeyCode.Z) || Input.GetButtonDown("Fire3"))
