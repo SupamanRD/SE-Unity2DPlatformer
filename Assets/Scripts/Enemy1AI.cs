@@ -7,6 +7,8 @@ using System.Collections;
 [RequireComponent (typeof (Seeker))]
 
 public class Enemy1AI : MonoBehaviour {
+    private float horizontal;
+    private bool facingRight;
 
     //What it is chasing
     public Transform target;
@@ -36,6 +38,7 @@ public class Enemy1AI : MonoBehaviour {
 
     void Start ()
     {
+        facingRight = true;
 
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
@@ -80,7 +83,9 @@ public class Enemy1AI : MonoBehaviour {
 
     void FixedUpdate()
     {
-        if(target == null)
+        horizontal = Input.GetAxis("Horizontal");
+
+        if (target == null)
         {
             return;
         }
@@ -117,5 +122,23 @@ public class Enemy1AI : MonoBehaviour {
             currentWaypoint++;
             return;
         }
+
+        flip(horizontal);
+
     }
+
+    // Rotates player animation
+    private void flip(float horizontal)
+    {
+        if (horizontal > 0 && !facingRight || horizontal < 0 && facingRight)
+        {
+            facingRight = !facingRight;
+            Vector3 theScale = transform.localScale;
+
+            theScale.x *= -1;
+
+            transform.localScale = theScale;
+        }
+    }
+
 }
