@@ -8,3 +8,8 @@ Inputs:
 		A - Move Right
 		Z - Attack
 		Space - Jump
+		
+---
+SOURCES:
+A* PATHFINDING AI ALGORITHM FROM:
+https://arongranberg.com/astar/download
