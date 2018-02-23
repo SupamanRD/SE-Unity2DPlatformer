@@ -6,7 +6,7 @@ using System.Collections;
 [RequireComponent (typeof (Rigidbody2D))]
 [RequireComponent (typeof (Seeker))]
 
-public class Enemy1AI : MonoBehaviour {
+public class Friend1AI : MonoBehaviour {
     private float horizontal;
     private bool facingRight;
 
