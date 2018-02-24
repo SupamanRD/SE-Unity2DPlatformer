@@ -3,6 +3,7 @@ guid: f6e5e00d6afb846849b617c831a1caeb
 timeCreated: 1509536027
 licenseType: Store
 TrueTypeFontImporter:
+  externalObjects: {}
   serializedVersion: 4
   fontSize: 16
   forceTextureCase: -2
@@ -14,10 +15,11 @@ TrueTypeFontImporter:
   - Changa One
   fallbackFontReferences:
   - {fileID: 12800000, guid: 008af7aa6d0e041a5beb797b1bfa7820, type: 3}
-  - {fileID: 12800000, guid: a8a3baaccfc974db693b0e49e9bd5f71, type: 3}
+  - {instanceID: 0}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
