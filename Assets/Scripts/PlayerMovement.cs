@@ -3,9 +3,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-
-public class PlayerMovement : MonoBehaviour {
+public class PlayerMovement : MonoBehaviour
+{
 
 
 
@@ -28,11 +29,13 @@ public class PlayerMovement : MonoBehaviour {
     private bool attack;
     private Animator playerAnimator;
     private Rigidbody2D rb2d;
+    
 
-   
+
 
     // Use this for initialization
-    void Start() {
+    void Start()
+    {
         facingRight = true;
         rb2d = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
@@ -100,14 +103,14 @@ public class PlayerMovement : MonoBehaviour {
     //Detects when player is on the ground
     private bool IsGrounded()
     {
-        if(rb2d.velocity.y <= 0)
+        if (rb2d.velocity.y <= 0)
         {
             foreach (Transform point in groundPoint)
             {
                 Collider2D[] colliders = Physics2D.OverlapCircleAll(point.position, groundRad, whatIsGround);
-                for(int i=0; i < colliders.Length; i++)
+                for (int i = 0; i < colliders.Length; i++)
                 {
-                    if(colliders[i].gameObject != gameObject)
+                    if (colliders[i].gameObject != gameObject)
                     {
                         return true;
                     }
@@ -133,5 +136,13 @@ public class PlayerMovement : MonoBehaviour {
     private void Reset()
     {
         attack = false;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Goal")
+        {
+            SceneManager.LoadScene("scene2");
+        }
     }
 }
