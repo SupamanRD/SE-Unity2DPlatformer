@@ -137,12 +137,4 @@ public class PlayerMovement : MonoBehaviour
     {
         attack = false;
     }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Goal")
-        {
-            SceneManager.LoadScene("scene2");
-        }
-    }
 }
