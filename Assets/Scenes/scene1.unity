@@ -2643,6 +2643,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   jump_speed: 70
+  control: 0
   jump_force: 700
 --- !u!212 &271132301
 SpriteRenderer:
