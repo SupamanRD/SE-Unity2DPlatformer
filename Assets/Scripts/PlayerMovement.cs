@@ -3,10 +3,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class PlayerMovement : MonoBehaviour
-{
+
+public class PlayerMovement : MonoBehaviour {
 
 
 
@@ -25,19 +24,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float jump_speed;
     [SerializeField]
-    private bool control;
-    [SerializeField]
     private float jump_force;
     private bool attack;
     private Animator playerAnimator;
     private Rigidbody2D rb2d;
-    
 
-
+   
 
     // Use this for initialization
-    void Start()
-    {
+    void Start() {
         facingRight = true;
         rb2d = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
@@ -53,7 +48,6 @@ public class PlayerMovement : MonoBehaviour
 
         HandleMovement(horizontal);
         HandleAttacks();
-        HandleLayers();
         Reset();
         flip(horizontal);
     }
@@ -61,20 +55,12 @@ public class PlayerMovement : MonoBehaviour
     //Handles all major player movement functionality
     private void HandleMovement(float horizontal)
     {
-        if (rb2d.velocity.y < 0)
-        {
-            playerAnimator.SetBool("land", true);
-        }
-        if (grounded || control)
-        {
-            rb2d.velocity = new Vector2(horizontal * speed, rb2d.velocity.y);
-        }
+        rb2d.velocity = new Vector2(horizontal * speed, rb2d.velocity.y);
         HandleInput();
         if (grounded && jump)
         {
             grounded = false;
             rb2d.AddForce(new Vector2(0, jump_force));
-            playerAnimator.SetTrigger("jump");
             jump = false;
         }
 
@@ -114,17 +100,15 @@ public class PlayerMovement : MonoBehaviour
     //Detects when player is on the ground
     private bool IsGrounded()
     {
-        if (rb2d.velocity.y <= 0)
+        if(rb2d.velocity.y <= 0)
         {
             foreach (Transform point in groundPoint)
             {
                 Collider2D[] colliders = Physics2D.OverlapCircleAll(point.position, groundRad, whatIsGround);
-                for (int i = 0; i < colliders.Length; i++)
+                for(int i=0; i < colliders.Length; i++)
                 {
-                    if (colliders[i].gameObject != gameObject)
+                    if(colliders[i].gameObject != gameObject)
                     {
-                        playerAnimator.ResetTrigger("jump");
-                        playerAnimator.SetBool("land", false);
                         return true;
                     }
                 }
@@ -149,18 +133,5 @@ public class PlayerMovement : MonoBehaviour
     private void Reset()
     {
         attack = false;
-        jump = false;
-    }
-
-    private void HandleLayers()
-    {
-        if (!grounded)
-        {
-            playerAnimator.SetLayerWeight(1, 1);
-        }
-        else
-        {
-            playerAnimator.SetLayerWeight(1, 0);
-        }
     }
 }
