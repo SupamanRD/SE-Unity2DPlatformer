@@ -1,4 +1,6 @@
-﻿using System.Collections;
+//Implemented by Cameron and Rutherford//
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;

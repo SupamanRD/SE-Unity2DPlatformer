@@ -1,4 +1,5 @@
-﻿using System.Collections;
+//implemented by Cameron and Abby//
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,7 +15,7 @@ public class CameraController : MonoBehaviour {
         offset = transform.position - player.transform.position;
 
 	}
-	
+
 	// Update is called once per frame
 	void LateUpdate () {
 
