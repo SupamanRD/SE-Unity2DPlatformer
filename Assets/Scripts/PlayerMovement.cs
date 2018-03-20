@@ -48,6 +48,7 @@ public class PlayerMovement : MonoBehaviour {
 
         HandleMovement(horizontal);
         HandleAttacks();
+        HandleLayers();
         Reset();
         flip(horizontal);
     }
@@ -55,13 +56,17 @@ public class PlayerMovement : MonoBehaviour {
     //Handles all major player movement functionality
     private void HandleMovement(float horizontal)
     {
+        if (rb2d.velocity.y < 0)
+        {
+            playerAnimator.SetBool("land", true);
+        }
         rb2d.velocity = new Vector2(horizontal * speed, rb2d.velocity.y);
         HandleInput();
         if (grounded && jump)
         {
             grounded = false;
             rb2d.AddForce(new Vector2(0, jump_force));
-            jump = false;
+            playerAnimator.SetTrigger("jump");
         }
 
         playerAnimator.SetFloat("movSpeed", Mathf.Abs(horizontal));
@@ -109,6 +114,8 @@ public class PlayerMovement : MonoBehaviour {
                 {
                     if(colliders[i].gameObject != gameObject)
                     {
+                        playerAnimator.ResetTrigger("jump");
+                        playerAnimator.SetBool("land", false);
                         return true;
                     }
                 }
@@ -133,5 +140,18 @@ public class PlayerMovement : MonoBehaviour {
     private void Reset()
     {
         attack = false;
+        jump = false;
+    }
+
+    private void HandleLayers()
+    {
+        if (!grounded)
+        {
+            playerAnimator.SetLayerWeight(1, 1);
+        }
+        else if(grounded)
+        {
+            playerAnimator.SetLayerWeight(1, 0);
+        }
     }
 }
