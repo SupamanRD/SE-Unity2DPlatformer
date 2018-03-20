@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿
+/*Reference: 
+ * https://www.youtube.com/watch?v=Vrld13ypX_I
+ * https://www.youtube.com/watch?v=q0SBfDFn2Bs&t=635s
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
