@@ -1,5 +1,5 @@
 # SE-Unity2DPlatformer
-In order to run our project, simply run the .exe in our archive titled "SpotlightBuild.exe". 
+In order to run our project, simply run the .exe in our archive titled "SpotlightBuild.exe". Must be on a system running Windows. 
 
 The unit test must be run from within Unity using the Test Runner. It is found in Assets/Scripts/NewPlayModeTest.cs.
 
