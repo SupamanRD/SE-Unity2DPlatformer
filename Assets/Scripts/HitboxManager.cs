@@ -12,10 +12,10 @@ public class HitboxManager : MonoBehaviour {
 	void OnTrigger2DEnter(Collider2D other)
 	{
 		if (other.tag == "Enemy") {
-			damage (other);
+			//damage (other);
 		}
 		else if (other.tag == "Player") {
-			damage (other);
+			//damage (other);
 		}
 	}
 
