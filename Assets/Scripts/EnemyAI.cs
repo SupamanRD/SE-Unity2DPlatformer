@@ -89,6 +89,14 @@ public class EnemyAI : MonoBehaviour
         {
             return;
         }
+        else
+        {
+
+
+            Quaternion rotation = Quaternion.LookRotation (target.transform.position - transform.position, transform.TransformDirection(Vector3.up));
+            transform.rotation = new Quaternion(0, 0, rotation.z, rotation.w);
+
+        }
 
         if (path == null)
         {
