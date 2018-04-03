@@ -1668,11 +1668,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4311454235356776, guid: 292641b1126b69341afa9cb65e9455fa, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -7.607963
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4311454235356776, guid: 292641b1126b69341afa9cb65e9455fa, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 7.8284745
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4311454235356776, guid: 292641b1126b69341afa9cb65e9455fa, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1704,7 +1704,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4311454235356776, guid: 292641b1126b69341afa9cb65e9455fa, type: 2}
       propertyPath: m_LocalScale.y
-      value: 2.7153218
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 292641b1126b69341afa9cb65e9455fa, type: 2}
@@ -2388,6 +2388,18 @@ GameObject:
   m_PrefabParentObject: {fileID: 1385510867482484, guid: 3df9420c895faab46909b09dd1095069,
     type: 2}
   m_PrefabInternal: {fileID: 875968131}
+--- !u!114 &271132299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 271132298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4fae7c61c0159d4b843a1e16a557387, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackTrigger: {fileID: 170925076}
 --- !u!4 &271132302 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4538574476381518, guid: 3df9420c895faab46909b09dd1095069,
@@ -6181,7 +6193,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4a2c0cde4929e440a8ca7d804110f748, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -6554,6 +6566,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114120441547257620, guid: 3df9420c895faab46909b09dd1095069,
+        type: 2}
+      propertyPath: attackTrigger
+      value: 
+      objectReference: {fileID: 170925076}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3df9420c895faab46909b09dd1095069, type: 2}
   m_IsPrefabParent: 0

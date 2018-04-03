@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour {
     private Animator playerAnimator;
     private Rigidbody2D rb2d;
 
+
    
 
     // Use this for initialization
@@ -36,6 +37,7 @@ public class PlayerMovement : MonoBehaviour {
         facingRight = true;
         rb2d = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
+
     }
 
     //FixedUpdate and HandleMovement implemented by Cameron and Landon
@@ -100,6 +102,7 @@ public class PlayerMovement : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Z) || Input.GetButtonDown("Fire3"))
         {
             attack = true;
+
         }
     }
     //Detects when player is on the ground
