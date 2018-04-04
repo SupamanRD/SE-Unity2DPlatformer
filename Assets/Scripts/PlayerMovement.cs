@@ -26,8 +26,14 @@ public class PlayerMovement : MonoBehaviour {
     [SerializeField]
     private float jump_force;
     private bool attack;
+    [SerializeField]
+    public int phealth;             //player health
     private Animator playerAnimator;
     private Rigidbody2D rb2d;
+
+    public GM gm;
+    [SerializeField]
+    public GameObject gameOver;
 
 
    
@@ -81,6 +87,16 @@ public class PlayerMovement : MonoBehaviour {
         if (attack)
         {
             playerAnimator.SetTrigger("attack");
+        }
+    }
+
+    //Handles the player being damaged as well as dying leading to a game over.
+    public void TakeDamage()
+    {
+        phealth -= 1;
+        if (phealth <= 0)
+        {
+            gm.GameOver();
         }
     }
 

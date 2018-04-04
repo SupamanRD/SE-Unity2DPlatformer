@@ -7,8 +7,10 @@ public class Timer : MonoBehaviour {
 
 	public float startTime;
 	private Text theText;
-	//public GameObject gameOverScreen;
 	public PlayerMovement player;
+    [SerializeField]
+    public GameObject gameover;
+    public GM gm;
 
 
 	int countDownSeconds;
@@ -22,7 +24,7 @@ public class Timer : MonoBehaviour {
 	void Update(){
 		startTime -= Time.deltaTime;
 		if (startTime <= 0) {
-			//gameOverScreen.SetActive (true);
+            gm.GameOver();
 			player.gameObject.SetActive(false);
 		}
 		theText.text = "" + Mathf.Round(startTime);
