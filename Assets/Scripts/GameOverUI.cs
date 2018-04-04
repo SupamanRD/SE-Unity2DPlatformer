@@ -7,7 +7,7 @@ public class GameOverUI : MonoBehaviour {
 
     public void Quit()
     {
-        Application.Quit();
+        SceneManager.LoadScene("menu1");
     }
 
     public void Retry()
