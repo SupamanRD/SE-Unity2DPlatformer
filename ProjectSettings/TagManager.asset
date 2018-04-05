@@ -8,6 +8,8 @@ TagManager:
   - Platform
   - GameManager
   - Character
+  - PlayerAttack
+  - UI
   layers:
   - Default
   - TransparentFX

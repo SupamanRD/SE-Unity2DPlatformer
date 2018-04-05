@@ -5,15 +5,17 @@ using UnityEngine;
 public class EnemyHurtboxManager : MonoBehaviour {
 
     [SerializeField]
-    private Enemy enemy;
+    public Enemy enemy;   
+
 
     void OnTrigger2DEnter(Collider2D other)
     {
 
-        if (other.tag == "Player")
+        if (other.tag == "PlayerAttack")
         {
-            enemy.TakeDamage();
+           enemy.TakeDamage();
         }
+        
         else if (other.tag == "Enemy")
         {
             //ignore

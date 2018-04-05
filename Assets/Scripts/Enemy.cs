@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyManager : MonoBehaviour {
+public class Enemy : MonoBehaviour {
     [SerializeField]
     public int health;
     public GM gm;

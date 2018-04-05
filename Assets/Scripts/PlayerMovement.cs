@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour {
     private float jump_speed;
     [SerializeField]
     private float jump_force;
-    private bool attack;
+    private bool attack = false;
     [SerializeField]
     public int health;             //player health
     private Animator playerAnimator;
@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour {
 
     public GM gm;
     public GameObject hurtbox;
+    public GameObject hitbox;
     public HealthUI healthUI;
     
 
@@ -40,6 +41,7 @@ public class PlayerMovement : MonoBehaviour {
     // Use this for initialization
     void Start() {
         facingRight = true;
+        
         rb2d = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
 
@@ -86,6 +88,14 @@ public class PlayerMovement : MonoBehaviour {
         if (attack)
         {
             playerAnimator.SetTrigger("attack");
+            hitbox.SetActive(true);
+            
+            hitbox.SetActive(false);
+            attack = false;
+        }
+        else
+        {
+            return;
         }
     }
 
@@ -124,6 +134,7 @@ public class PlayerMovement : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Z) || Input.GetButtonDown("Fire3"))
         {
             attack = true;
+            
 
         }
     }

@@ -6,13 +6,15 @@ public class HitboxManager : MonoBehaviour {
 
 	public int damage;
 	public int knockback;
+    [SerializeField]
+    public Enemy enemy;
 	BoxCollider2D hb;
 
 
 	void OnTrigger2DEnter(Collider2D other)
 	{
 		if (other.tag == "Enemy") {
-			//damage (other);
+            enemy.TakeDamage();
 		}
 		else if (other.tag == "Player") {
 			//damage (other);

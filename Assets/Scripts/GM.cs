@@ -20,7 +20,7 @@ public class GM : MonoBehaviour {
         DestroyObject(player);
         gameOverUI.SetActive(true);
     }
-    public void KillEnemy(EnemyManager enemy)
+    public void KillEnemy(Enemy enemy)
     {
         DestroyObject(enemy);
     }
@@ -30,6 +30,10 @@ public class GM : MonoBehaviour {
         yield return new WaitForSeconds(2);
     }
    public IEnumerator WaitForEnemyDam()
+    {
+        yield return new WaitForSeconds((float).75);
+    }
+    public IEnumerator WaitForAttack()
     {
         yield return new WaitForSeconds((float).75);
     }
