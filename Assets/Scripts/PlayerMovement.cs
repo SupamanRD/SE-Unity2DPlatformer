@@ -7,14 +7,12 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
 
-
-
     [SerializeField]            //allows us to edit value within Unity editor
     public float speed = 1f;    //player movement speed
     private float horizontal;
     private bool facingRight;
     [SerializeField]
-    private Transform[] groundPoint;    //array for ground collisions. doesn't work yet
+    private Transform[] groundPoint;    //array for ground collisions
     [SerializeField]
     private float groundRad;            //ground radius
     [SerializeField]
@@ -27,11 +25,13 @@ public class PlayerMovement : MonoBehaviour {
     private float jump_force;
     private bool attack;
     [SerializeField]
-    public int phealth;             //player health
+    public int health;             //player health
     private Animator playerAnimator;
     private Rigidbody2D rb2d;
 
     public GM gm;
+    public GameObject hurtbox;
+    public HealthUI healthUI;
     
 
 
@@ -92,12 +92,19 @@ public class PlayerMovement : MonoBehaviour {
     //Handles the player being damaged as well as dying leading to a game over.
     public void TakeDamage()
     {
-        phealth -= 1;
-        if (phealth <= 0)
+        hurtbox.SetActive(false);
+        health -= 1;
+        healthUI.UpdateHealth(health);  //update ui
+
+        if (health <= 0)        //if player is dead, end game
         {
             gm.GameOver();
         }
+        gm.Wait();
+        hurtbox.SetActive(true);
     }
+
+  
 
     //Handles keystroke inputs for different actions
     private void HandleInput()
@@ -120,6 +127,7 @@ public class PlayerMovement : MonoBehaviour {
 
         }
     }
+
     //Detects when player is on the ground
     private bool IsGrounded()
     {

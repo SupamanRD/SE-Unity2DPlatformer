@@ -7,6 +7,9 @@ public class GM : MonoBehaviour {
     private GameObject gameOverUI;
     [SerializeField]
     private GameObject gameWinUI;
+    [SerializeField]
+    private PlayerMovement player;
+    
 
     public void GameWin()
     {
@@ -14,6 +17,20 @@ public class GM : MonoBehaviour {
     }
     public void GameOver()
     {
+        DestroyObject(player);
         gameOverUI.SetActive(true);
+    }
+    public void KillEnemy(EnemyManager enemy)
+    {
+        DestroyObject(enemy);
+    }
+    //used to stall the hurtbox activation so that the player doesn't take continuous damage each frame
+    public IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(2);
+    }
+   public IEnumerator WaitForEnemyDam()
+    {
+        yield return new WaitForSeconds((float).75);
     }
 }

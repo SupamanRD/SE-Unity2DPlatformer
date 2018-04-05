@@ -2,23 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HurtBoxManager : MonoBehaviour {
+public class PlayerHurtBoxManager : MonoBehaviour {
 
-    public GameObject character;
+    public PlayerMovement player;
 
     void OnTrigger2DEnter(Collider2D other)
     {
-        if (character.tag == "Player")
-        {
+       
             if (other.tag == "Enemy")
-            {
-
+            {             
+                player.TakeDamage();
             }
             else if (other.tag == "Player")
             {
                 //ignore
                 return;
             }
-        }
+        
     }
 }
