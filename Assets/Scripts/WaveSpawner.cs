@@ -26,6 +26,7 @@ public class WaveSpawner : MonoBehaviour {
     public float timeBetween = 5f;
     public float waveCountdown;
     private float searchCountdown = 1f;
+    public GM gm;
 
     private SpawnState state = SpawnState.COUNTING;
 
@@ -79,6 +80,7 @@ public class WaveSpawner : MonoBehaviour {
             //level is complete
             nextWave = 0;
             Debug.Log("All Waves Complete");
+            gm.GameWin();
         }
         else
         {

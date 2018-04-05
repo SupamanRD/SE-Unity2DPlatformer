@@ -32,8 +32,7 @@ public class PlayerMovement : MonoBehaviour {
     private Rigidbody2D rb2d;
 
     public GM gm;
-    [SerializeField]
-    public GameObject gameOver;
+    
 
 
    
