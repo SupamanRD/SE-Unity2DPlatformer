@@ -85,7 +85,7 @@ public class PlayerMovement : MonoBehaviour {
     //Handles attack variations
     private void HandleAttacks()
     {
-        if (attack)
+        if (attack && grounded)
         {
             playerAnimator.SetTrigger("attack");
             hitbox.SetActive(true);
@@ -151,7 +151,7 @@ public class PlayerMovement : MonoBehaviour {
                 {
                     if(colliders[i].gameObject != gameObject)
                     {
-                        playerAnimator.ResetTrigger("jump");
+                        //playerAnimator.ResetTrigger("jump");
                         playerAnimator.SetBool("land", false);
                         return true;
                     }
@@ -186,9 +186,9 @@ public class PlayerMovement : MonoBehaviour {
         {
             playerAnimator.SetLayerWeight(1, 1);
         }
-        else if(grounded)
+        else
         {
-            playerAnimator.SetLayerWeight(1, 0);
+            playerAnimator.SetLayerWeight(1, -0.1f);
         }
     }
 }
