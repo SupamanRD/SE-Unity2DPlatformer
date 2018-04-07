@@ -22,6 +22,7 @@ public class GM : MonoBehaviour {
     }
     public void KillEnemy(Enemy enemy)
     {
+        Debug.Log("Enemy should die");
         DestroyObject(enemy);
     }
     //used to stall the hurtbox activation so that the player doesn't take continuous damage each frame

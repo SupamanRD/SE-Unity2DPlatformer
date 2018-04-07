@@ -13,6 +13,7 @@ public class EnemyHurtboxManager : MonoBehaviour {
 
         if (other.tag == "PlayerAttack")
         {
+            Debug.Log("Enemy hit by attack");
            enemy.TakeDamage();
         }
         

@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour {
 
 	public void TakeDamage()
     {
+        Debug.Log("Enemy Taking Damage");
         hurtbox.SetActive(false);
         health -= 1;
         if(health <= 0)

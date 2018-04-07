@@ -10,7 +10,8 @@ public class PlayerHurtBoxManager : MonoBehaviour {
     {
        
             if (other.tag == "Enemy")
-            {             
+            {
+            Debug.Log("Player touched enemy");
                 player.TakeDamage();
             }
             else if (other.tag == "Player")

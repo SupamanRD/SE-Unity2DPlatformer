@@ -87,9 +87,10 @@ public class PlayerMovement : MonoBehaviour {
     {
         if (attack && grounded)
         {
+            Debug.Log("Attacking");
             playerAnimator.SetTrigger("attack");
             hitbox.SetActive(true);
-            
+            gm.WaitForAttack();
             hitbox.SetActive(false);
             attack = false;
         }
@@ -102,12 +103,14 @@ public class PlayerMovement : MonoBehaviour {
     //Handles the player being damaged as well as dying leading to a game over.
     public void TakeDamage()
     {
+        Debug.Log("Player taking damage");
         hurtbox.SetActive(false);
         health -= 1;
-        healthUI.UpdateHealth(health);  //update ui
+        healthUI.UpdateHealth();  //update ui
 
         if (health <= 0)        //if player is dead, end game
         {
+            Debug.Log("Game should end");
             gm.GameOver();
         }
         gm.Wait();

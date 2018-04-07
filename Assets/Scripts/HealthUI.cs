@@ -9,15 +9,17 @@ public class HealthUI : MonoBehaviour {
     [SerializeField]
     public GameObject gameover;
     public GM gm;
+    public PlayerMovement player;
 
     void Start()
     {
         theText = GetComponent<Text>();
     }
 
-    public void UpdateHealth(int health)
+    public void UpdateHealth()
     {
-        theText.text = "" + health;
+        Debug.Log("Updating health");
+        theText.text = "" + player.health;
     }
 
 }

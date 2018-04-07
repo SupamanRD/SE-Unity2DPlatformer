@@ -13,10 +13,11 @@ public class HitboxManager : MonoBehaviour {
 
 	void OnTrigger2DEnter(Collider2D other)
 	{
-		if (other.tag == "Enemy") {
-            enemy.TakeDamage();
-		}
-		else if (other.tag == "Player") {
+		//if (other.tag == "Enemy") {
+
+          //  enemy.TakeDamage();
+		//}
+		if (other.tag == "Player") {
 			//damage (other);
 		}
 	}
