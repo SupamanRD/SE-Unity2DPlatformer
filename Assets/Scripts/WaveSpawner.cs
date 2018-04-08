@@ -27,6 +27,7 @@ public class WaveSpawner : MonoBehaviour {
     public float waveCountdown;
     private float searchCountdown = 1f;
     public GM gm;
+    public WaveUI wui;
 
     private SpawnState state = SpawnState.COUNTING;
 
@@ -106,6 +107,7 @@ public class WaveSpawner : MonoBehaviour {
     {
         Debug.Log("Spawning Wave");
         state = SpawnState.SPAWNING;
+        wui.UpdateWave(nextWave + 1);
         for(int i = 0; i< _wave.enemyNo; i++)
         {
             SpawnEnemy(_wave.enemy);
