@@ -35,10 +35,13 @@ public class PlayerMovement : MonoBehaviour {
 
 
     public GM gm;
-    public GameObject hurtbox;
-    public GameObject hitbox;
+   
     public HealthUI healthUI;
-    
+
+    [SerializeField]
+    private EdgeCollider2D SwordCollider;
+    [SerializeField]
+    private List<string> damageSources;
 
 
    
@@ -61,8 +64,18 @@ public class PlayerMovement : MonoBehaviour {
 
 
         HandleMovement(horizontal);
-        HandleAttacks();
+
+
+        
+       // HandleLayers();
+
+       
         //HandleLayers();
+
+
+        
+        //HandleLayers();
+
         Reset();
         flip(horizontal);
     }
@@ -87,18 +100,13 @@ public class PlayerMovement : MonoBehaviour {
     //Handles attack variations
     private void HandleAttacks()
     {
-        if (Attack)
+        SwordCollider.enabled = !SwordCollider.enabled;
+    }
+    public virtual void OnTriggerEnter2D(Collider2D other)
+    {
+        if(damageSources.Contains(other.tag))
         {
-            Debug.Log("Attacking");
-            playerAnimator.SetTrigger("attack");
-            hitbox.SetActive(true);
-            gm.WaitForAttack();
-            hitbox.SetActive(false);
-            Attack = false;
-        }
-        else
-        {
-            return;
+            TakeDamage();
         }
     }
 
@@ -106,7 +114,7 @@ public class PlayerMovement : MonoBehaviour {
     public void TakeDamage()
     {
         Debug.Log("Player taking damage");
-        hurtbox.SetActive(false);
+       
         health -= 1;
         healthUI.UpdateHealth();  //update ui
 
@@ -116,7 +124,7 @@ public class PlayerMovement : MonoBehaviour {
             gm.GameOver();
         }
         gm.Wait();
-        hurtbox.SetActive(true);
+       
     }
 
   
@@ -139,10 +147,8 @@ public class PlayerMovement : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Z) || Input.GetButtonDown("Fire3"))
         {
-            Attack = true;
-            //playerAnimator.SetTrigger("attack");
-
-
+            playerAnimator.SetTrigger("attack");
+            HandleAttacks();
         }
     }
 
