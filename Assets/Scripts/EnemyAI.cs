@@ -11,7 +11,7 @@ public class EnemyAI : MonoBehaviour
    
 
     //What it is chasing
-    public Transform target;
+    private Transform target;
 
     //Times per second we will update path
     public float updateRate = 2f;
@@ -38,8 +38,8 @@ public class EnemyAI : MonoBehaviour
 
     void Start()
     {
-        
 
+        target = GameObject.Find("Player").transform;
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
 

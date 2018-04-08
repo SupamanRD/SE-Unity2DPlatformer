@@ -11,6 +11,22 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1845921932385820}
   m_IsPrefabParent: 1
+--- !u!1 &1120283978086694
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4892833493520708}
+  - component: {fileID: 68972837931966538}
+  m_Layer: 0
+  m_Name: EnemyAttackCollider
+  m_TagString: EnemyAttack
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1845921932385820
 GameObject:
   m_ObjectHideFlags: 0
@@ -42,8 +58,22 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.22, y: 54.88, z: 0}
   m_LocalScale: {x: 2.269298, y: 2.2366645, z: 2.301931}
-  m_Children: []
+  m_Children:
+  - {fileID: 4892833493520708}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4892833493520708
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1120283978086694}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.5, y: 0, z: 0}
+  m_LocalScale: {x: 0.44066492, y: 0.44709432, z: 0.4344179}
+  m_Children: []
+  m_Father: {fileID: 4257744446779750}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &50305244162670710
@@ -106,6 +136,27 @@ PolygonCollider2D:
       - {x: 0.22500001, y: -0.4625}
       - {x: 0.425, y: -0.0375}
       - {x: 0.425, y: 0.3375}
+--- !u!68 &68972837931966538
+EdgeCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1120283978086694}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 1.1467239, y: -1.2091026}
+  - {x: 0.57426727, y: -1.2444841}
+  - {x: -0.09649944, y: -0.9498596}
+  - {x: -0.11928451, y: -0.546299}
+  - {x: 0.029772365, y: 0.018043518}
+  - {x: 0.15260883, y: 0.18046188}
 --- !u!95 &95139505839374094
 Animator:
   serializedVersion: 3
@@ -160,8 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
-  gm: {fileID: 0}
-  attackCollider: {fileID: 0}
+  attackCollider: {fileID: 68972837931966538}
   takingdam: 0
   damageSources:
   - PlayerAttack

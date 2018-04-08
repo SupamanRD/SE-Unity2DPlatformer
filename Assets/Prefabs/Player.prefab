@@ -26,22 +26,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1180136764869056
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4803283596140696}
-  - component: {fileID: 68463801996573188}
-  m_Layer: 8
-  m_Name: AttackCollider
-  m_TagString: PlayerAttack
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1385510867482484
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,6 +42,22 @@ GameObject:
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1412008840529364
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4453790311154612}
+  - component: {fileID: 68753710624898354}
+  m_Layer: 8
+  m_Name: AttackCollider
+  m_TagString: PlayerAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,6 +118,19 @@ Transform:
   m_Father: {fileID: 4538574476381518}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4453790311154612
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1412008840529364}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4538574476381518}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4538574476381518
 Transform:
   m_ObjectHideFlags: 1
@@ -131,7 +144,7 @@ Transform:
   - {fileID: 4115456344936346}
   - {fileID: 4142174397180070}
   - {fileID: 4633459327452692}
-  - {fileID: 4803283596140696}
+  - {fileID: 4453790311154612}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -147,19 +160,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4538574476381518}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4803283596140696
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1180136764869056}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4538574476381518}
-  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &50344072990833918
 Rigidbody2D:
@@ -206,12 +206,12 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4, y: 5}
   m_EdgeRadius: 0
---- !u!68 &68463801996573188
+--- !u!68 &68753710624898354
 EdgeCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1180136764869056}
+  m_GameObject: {fileID: 1412008840529364}
   m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
@@ -270,8 +270,9 @@ MonoBehaviour:
   health: 5
   gm: {fileID: 0}
   healthUI: {fileID: 0}
-  SwordCollider: {fileID: 68463801996573188}
-  damageSources: []
+  SwordCollider: {fileID: 68753710624898354}
+  damageSources:
+  - EnemyAttack
 --- !u!212 &212854181486558562
 SpriteRenderer:
   m_ObjectHideFlags: 1

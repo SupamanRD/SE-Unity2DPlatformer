@@ -49,16 +49,16 @@ public class WaveSpawner : MonoBehaviour {
             {
                 //begin new wave
                 Debug.Log("Wave Completed");
-                return;
+                WaveCompleted();
             }
             else
             {
                 return;
             }
         }
-        if(waveCountdown <= 0)
+        if (waveCountdown <= 0)
         {
-            if(state != SpawnState.SPAWNING)
+            if (state != SpawnState.SPAWNING)
             {
                 //start spawning
                 StartCoroutine(SpawnWave(waves[nextWave]));

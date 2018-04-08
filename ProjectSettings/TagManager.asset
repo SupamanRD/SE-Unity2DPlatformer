@@ -10,6 +10,8 @@ TagManager:
   - Character
   - PlayerAttack
   - UI
+  - EnemyAttack
+  - Ally
   layers:
   - Default
   - TransparentFX
