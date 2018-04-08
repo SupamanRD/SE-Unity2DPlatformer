@@ -12,6 +12,7 @@ TagManager:
   - UI
   - EnemyAttack
   - Ally
+  - KillPlane
   layers:
   - Default
   - TransparentFX

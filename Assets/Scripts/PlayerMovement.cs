@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour {
     public bool Jump { get; set; }
     public bool Grounded { get; set; }
 
-
+    Vector2 startPos;
     public GM gm;
    
     public HealthUI healthUI;
@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour {
     // Use this for initialization
     void Start() {
         facingRight = true;
-        
+        startPos = transform.position;
         Rb2d = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
 
@@ -107,7 +107,15 @@ public class PlayerMovement : MonoBehaviour {
     {
         if(damageSources.Contains(other.tag))
         {
-            TakeDamage();
+            if (other.tag == "EnemyAttack")
+            {
+                TakeDamage();
+            }
+            else if(other.tag == "KillPlane")
+            {
+                TakeDamage();
+                transform.position = startPos;
+            }
         }
     }
 

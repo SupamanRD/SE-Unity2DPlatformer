@@ -9,8 +9,15 @@ public class GM : MonoBehaviour {
     private GameObject gameWinUI;
     [SerializeField]
     private PlayerMovement player;
-    
 
+
+    public void Update()
+    {
+        if(player == null)
+        {
+            gameOverUI.SetActive(true);
+        }
+    }
     public void GameWin()
     {
         gameWinUI.SetActive(true);
