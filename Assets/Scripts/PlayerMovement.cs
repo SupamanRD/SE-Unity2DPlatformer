@@ -64,7 +64,7 @@ public class PlayerMovement : MonoBehaviour {
 
 
         HandleMovement(horizontal);
-<<<<<<< HEAD
+
 
         
        // HandleLayers();
@@ -72,10 +72,10 @@ public class PlayerMovement : MonoBehaviour {
        
         //HandleLayers();
 
-=======
-        HandleAttacks();
+
+        
         //HandleLayers();
->>>>>>> fa8707a63ccf06b4a1e99d3a25a91a6b5651c679
+
         Reset();
         flip(horizontal);
     }
@@ -99,24 +99,11 @@ public class PlayerMovement : MonoBehaviour {
     //Handles attack variations
     private void HandleAttacks()
     {
-<<<<<<< HEAD
         SwordCollider.enabled = !SwordCollider.enabled;
     }
     public virtual void OnTriggerEnter2D(Collider2D other)
     {
         if(damageSources.Contains(other.tag))
-=======
-        if (Attack)
-        {
-            Debug.Log("Attacking");
-            playerAnimator.SetTrigger("attack");
-            hitbox.SetActive(true);
-            gm.WaitForAttack();
-            hitbox.SetActive(false);
-            Attack = false;
-        }
-        else
->>>>>>> fa8707a63ccf06b4a1e99d3a25a91a6b5651c679
         {
             TakeDamage();
         }
@@ -126,7 +113,7 @@ public class PlayerMovement : MonoBehaviour {
     public void TakeDamage()
     {
         Debug.Log("Player taking damage");
-        //hurtbox.SetActive(false);
+       
         health -= 1;
         healthUI.UpdateHealth();  //update ui
 
@@ -136,7 +123,7 @@ public class PlayerMovement : MonoBehaviour {
             gm.GameOver();
         }
         gm.Wait();
-        //hurtbox.SetActive(true);
+       
     }
 
   
@@ -159,21 +146,8 @@ public class PlayerMovement : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Z) || Input.GetButtonDown("Fire3"))
         {
-<<<<<<< HEAD
-
             playerAnimator.SetTrigger("attack");
             HandleAttacks();
-
-            //Attack = true;
-            //playerAnimator.SetTrigger("attack");
-
-
-=======
-            Attack = true;
-            //playerAnimator.SetTrigger("attack");
-
->>>>>>> fa8707a63ccf06b4a1e99d3a25a91a6b5651c679
-
         }
     }
 
