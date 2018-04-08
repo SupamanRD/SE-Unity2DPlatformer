@@ -5,20 +5,35 @@ using UnityEngine;
 public class Enemy : MonoBehaviour {
     [SerializeField]
     public int health;
-    public GM gm;
-    public GameObject hurtbox;
+    
 
-	public void TakeDamage()
+
+    [SerializeField]
+    private EdgeCollider2D attackCollider;
+    [SerializeField]
+    public bool takingdam = false;
+    [SerializeField]
+    private List<string> damageSources;
+
+    public virtual void OnTriggerEnter2D(Collider2D other)
+    {
+        if (damageSources.Contains(other.tag))
+        {
+            takingdam = true;
+            TakeDamage();
+        }
+    }
+
+    public void TakeDamage()
     {
         Debug.Log("Enemy Taking Damage");
-        hurtbox.SetActive(false);
+        
         health -= 1;
         if(health <= 0)
         {
-            gm.KillEnemy(this);
+            Destroy(this.gameObject);
         }
-        gm.WaitForEnemyDam();
-        hurtbox.SetActive(true);
+       
     }
 
 }

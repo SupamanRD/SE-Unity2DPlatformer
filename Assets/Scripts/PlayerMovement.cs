@@ -17,23 +17,31 @@ public class PlayerMovement : MonoBehaviour {
     private float groundRad;            //ground radius
     [SerializeField]
     private LayerMask whatIsGround;     //used to specify what counts as ground
-    private bool grounded;              //check if the player is grounded
-    private bool jump;                  //check if the player has jumped
+    //private bool grounded;              //check if the player is grounded
+    //private bool jump;                  //check if the player has jumped
     [SerializeField]
     private float jump_speed;
     [SerializeField]
     private float jump_force;
-    private bool attack = false;
+    //private bool attack = false;
     [SerializeField]
     public int health;             //player health
     private Animator playerAnimator;
-    private Rigidbody2D rb2d;
+    private Rigidbody2D Rb2d { get; set; }
+
+    public bool Attack { get; set; }
+    public bool Jump { get; set; }
+    public bool Grounded { get; set; }
+
 
     public GM gm;
-    public GameObject hurtbox;
-    public GameObject hitbox;
+   
     public HealthUI healthUI;
-    
+
+    [SerializeField]
+    private EdgeCollider2D SwordCollider;
+    [SerializeField]
+    private List<string> damageSources;
 
 
    
@@ -42,7 +50,7 @@ public class PlayerMovement : MonoBehaviour {
     void Start() {
         facingRight = true;
         
-        rb2d = GetComponent<Rigidbody2D>();
+        Rb2d = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
 
     }
@@ -52,12 +60,17 @@ public class PlayerMovement : MonoBehaviour {
     private void FixedUpdate()
     {
         horizontal = Input.GetAxis("Horizontal");
-        grounded = IsGrounded();
+        Grounded = IsGrounded();
 
 
         HandleMovement(horizontal);
-        HandleAttacks();
-        HandleLayers();
+
+        
+       // HandleLayers();
+
+       
+        //HandleLayers();
+
         Reset();
         flip(horizontal);
     }
@@ -65,16 +78,12 @@ public class PlayerMovement : MonoBehaviour {
     //Handles all major player movement functionality
     private void HandleMovement(float horizontal)
     {
-        if (rb2d.velocity.y < 0)
-        {
-            playerAnimator.SetBool("land", true);
-        }
-        rb2d.velocity = new Vector2(horizontal * speed, rb2d.velocity.y);
+        Rb2d.velocity = new Vector2(horizontal * speed, Rb2d.velocity.y);
         HandleInput();
-        if (grounded && jump)
+        if (Grounded && Jump)
         {
-            grounded = false;
-            rb2d.AddForce(new Vector2(0, jump_force));
+            Grounded = false;
+            Rb2d.AddForce(new Vector2(0, jump_force));
             playerAnimator.SetTrigger("jump");
         }
 
@@ -85,18 +94,13 @@ public class PlayerMovement : MonoBehaviour {
     //Handles attack variations
     private void HandleAttacks()
     {
-        if (attack && grounded)
+        SwordCollider.enabled = !SwordCollider.enabled;
+    }
+    public virtual void OnTriggerEnter2D(Collider2D other)
+    {
+        if(damageSources.Contains(other.tag))
         {
-            Debug.Log("Attacking");
-            playerAnimator.SetTrigger("attack");
-            hitbox.SetActive(true);
-            gm.WaitForAttack();
-            hitbox.SetActive(false);
-            attack = false;
-        }
-        else
-        {
-            return;
+            TakeDamage();
         }
     }
 
@@ -104,7 +108,7 @@ public class PlayerMovement : MonoBehaviour {
     public void TakeDamage()
     {
         Debug.Log("Player taking damage");
-        hurtbox.SetActive(false);
+        //hurtbox.SetActive(false);
         health -= 1;
         healthUI.UpdateHealth();  //update ui
 
@@ -114,7 +118,7 @@ public class PlayerMovement : MonoBehaviour {
             gm.GameOver();
         }
         gm.Wait();
-        hurtbox.SetActive(true);
+        //hurtbox.SetActive(true);
     }
 
   
@@ -124,7 +128,8 @@ public class PlayerMovement : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire1"))
         {
-            jump = true;
+            //playerAnimator.SetTrigger("jump");
+            Jump = true;
         }
 
         if (Input.GetKeyDown(KeyCode.X) || Input.GetButtonDown("Fire2"))
@@ -136,8 +141,14 @@ public class PlayerMovement : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Z) || Input.GetButtonDown("Fire3"))
         {
-            attack = true;
-            
+
+            playerAnimator.SetTrigger("attack");
+            HandleAttacks();
+
+            //Attack = true;
+            //playerAnimator.SetTrigger("attack");
+
+
 
         }
     }
@@ -145,7 +156,7 @@ public class PlayerMovement : MonoBehaviour {
     //Detects when player is on the ground
     private bool IsGrounded()
     {
-        if(rb2d.velocity.y <= 0)
+        if(Rb2d.velocity.y <= 0)
         {
             foreach (Transform point in groundPoint)
             {
@@ -154,8 +165,7 @@ public class PlayerMovement : MonoBehaviour {
                 {
                     if(colliders[i].gameObject != gameObject)
                     {
-                        //playerAnimator.ResetTrigger("jump");
-                        playerAnimator.SetBool("land", false);
+                        playerAnimator.ResetTrigger("jump");
                         return true;
                     }
                 }
@@ -179,10 +189,10 @@ public class PlayerMovement : MonoBehaviour {
     // Reset animation values
     private void Reset()
     {
-        attack = false;
-        jump = false;
+        Attack = false;
+        Jump = false;
     }
-
+    /*
     private void HandleLayers()
     {
         if (!grounded)
@@ -193,5 +203,5 @@ public class PlayerMovement : MonoBehaviour {
         {
             playerAnimator.SetLayerWeight(1, -0.1f);
         }
-    }
+    }*/
 }
