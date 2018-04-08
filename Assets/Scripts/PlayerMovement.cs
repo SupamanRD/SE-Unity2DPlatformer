@@ -76,10 +76,11 @@ public class PlayerMovement : MonoBehaviour {
         {
             Grounded = false;
             Rb2d.AddForce(new Vector2(0, jump_force));
-            playerAnimator.SetTrigger("jump");
+            //playerAnimator.SetTrigger("jump");
         }
 
         playerAnimator.SetFloat("movSpeed", Mathf.Abs(horizontal));
+    
     }
 
     //HandleInput, HandleAttacks and IsGrounded implemented by Rutherford and Abby
