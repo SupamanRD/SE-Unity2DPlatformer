@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour {
     //private bool attack = false;
     [SerializeField]
     public int health;             //player health
+    public bool dead;
     private Animator playerAnimator;
     private Rigidbody2D Rb2d { get; set; }
 
