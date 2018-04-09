@@ -17,13 +17,10 @@ public class PlayerMovement : MonoBehaviour {
     private float groundRad;            //ground radius
     [SerializeField]
     private LayerMask whatIsGround;     //used to specify what counts as ground
-    //private bool grounded;              //check if the player is grounded
-    //private bool jump;                  //check if the player has jumped
     [SerializeField]
     private float jump_speed;
     [SerializeField]
     private float jump_force;
-    //private bool attack = false;
     [SerializeField]
     public int health;             //player health
     public bool dead;
@@ -127,6 +124,8 @@ public class PlayerMovement : MonoBehaviour {
         if (health <= 0)        //if player is dead, end game
         {
             Debug.Log("Game should end");
+            playerAnimator.SetTrigger("dead");
+            gm.Wait();
             gm.GameOver();
         }
         gm.Wait();
