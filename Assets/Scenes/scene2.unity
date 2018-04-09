@@ -2200,11 +2200,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4538574476381518, guid: 3df9420c895faab46909b09dd1095069, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3.24
+      value: 3.157
       objectReference: {fileID: 0}
     - target: {fileID: 4538574476381518, guid: 3df9420c895faab46909b09dd1095069, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.05
+      value: -1.818
       objectReference: {fileID: 0}
     - target: {fileID: 4538574476381518, guid: 3df9420c895faab46909b09dd1095069, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2244,6 +2244,14 @@ Prefab:
         type: 2}
       propertyPath: damageSources.Array.data[1]
       value: KillPlane
+      objectReference: {fileID: 0}
+    - target: {fileID: 4538574476381518, guid: 3df9420c895faab46909b09dd1095069, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.4667388
+      objectReference: {fileID: 0}
+    - target: {fileID: 4538574476381518, guid: 3df9420c895faab46909b09dd1095069, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.45953557
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3df9420c895faab46909b09dd1095069, type: 2}
