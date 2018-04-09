@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
 
+    [SerializeField]
+    public GameObject lsui;
+
     public void PlayGame() {
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -32,8 +35,15 @@ public class MainMenu : MonoBehaviour {
 
     }
 
+    public void Back()
+    {
+       lsui.SetActive(false);
+    }
 
-
+    public void LevelSelect()
+    {
+       lsui.SetActive(true);
+    }
     public void QuitGame()
     {
         Debug.Log("QUIT!");
