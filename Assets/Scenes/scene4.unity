@@ -1825,6 +1825,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   knockback: 0
+  enemy: {fileID: 0}
 --- !u!1 &177801516
 GameObject:
   m_ObjectHideFlags: 0
@@ -2329,7 +2330,7 @@ Transform:
   - {fileID: 601354867}
   - {fileID: 1407622429}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &250729644
 GameObject:
@@ -2451,11 +2452,6 @@ Transform:
   m_Father: {fileID: 926526341}
   m_RootOrder: 49
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &252700056 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4153565005444180, guid: 86b7eb109cb91e44ebd2719490ca6a93,
-    type: 2}
-  m_PrefabInternal: {fileID: 346713833}
 --- !u!1 &271132298 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1385510867482484, guid: 3df9420c895faab46909b09dd1095069,
@@ -3048,11 +3044,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - name: Eagle
-    enemy: {fileID: 252700056}
+    enemy: {fileID: 0}
     enemyNo: 1
     rate: 1
   - name: Eagles
-    enemy: {fileID: 252700056}
+    enemy: {fileID: 0}
     enemyNo: 2
     rate: 1.5
   spawnPoints:
@@ -3061,6 +3057,9 @@ MonoBehaviour:
   - {fileID: 1640513162}
   timeBetween: 5
   waveCountdown: 0
+  gm: {fileID: 0}
+  wui: {fileID: 0}
+  player: {fileID: 0}
 --- !u!114 &302025188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3073,6 +3072,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverUI: {fileID: 554542337}
+  gameWinUI: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &317160041
 GameObject:
   m_ObjectHideFlags: 0
@@ -3581,7 +3582,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &356452511
 MonoBehaviour:
@@ -6667,7 +6668,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4a2c0cde4929e440a8ca7d804110f748, type: 3}
+  m_audioClip: {fileID: 8300000, guid: fad6cbbbff4fd44edb1b55259e3321aa, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
@@ -6725,7 +6726,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -7232,7 +7233,7 @@ Transform:
   - {fileID: 870190213}
   - {fileID: 450072234}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!252 &926526342
 SurfaceEffector2D:
@@ -7440,7 +7441,7 @@ Transform:
   - {fileID: 1140188687}
   - {fileID: 1414169592}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &945682101
 GameObject:
@@ -8912,7 +8913,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1094697243
 GameObject:
@@ -13882,7 +13883,7 @@ Transform:
   - {fileID: 2116941813}
   - {fileID: 423925694}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1913305512
 GameObject:
