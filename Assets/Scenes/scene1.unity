@@ -250,7 +250,7 @@ Transform:
   - {fileID: 1189637878}
   - {fileID: 884117593}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &271132298 stripped
 GameObject:
@@ -356,7 +356,6 @@ MonoBehaviour:
   waveCountdown: 0
   gm: {fileID: 302025188}
   wui: {fileID: 565954737}
-  player: {fileID: 0}
 --- !u!114 &302025188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -955,7 +954,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5b6cbe7d8d5184a1d92e1c7ef3495961, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4a2c0cde4929e440a8ca7d804110f748, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
@@ -970,7 +969,7 @@ AudioSource:
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 1
-  BypassListenerEffects: 1
+  BypassListenerEffects: 0
   BypassReverbZones: 0
   rolloffCustomCurve:
     serializedVersion: 2
@@ -1013,7 +1012,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 0
+    m_RotationOrder: 4
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1626,7 +1625,7 @@ Transform:
   m_Children:
   - {fileID: 1238566417}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1427796079
 Prefab:
@@ -1867,7 +1866,7 @@ Transform:
   m_LocalScale: {x: 0.97844654, y: 0.97844654, z: 0.97844654}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1791853728 stripped
 GameObject:
