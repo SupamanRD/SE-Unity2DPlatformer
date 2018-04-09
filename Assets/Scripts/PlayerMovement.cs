@@ -119,6 +119,12 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
+    public void Heal(int heal)
+    {
+        health += heal;
+        healthUI.UpdateHealth();
+    }
+
     //Handles the player being damaged as well as dying leading to a game over.
     public void TakeDamage()
     {

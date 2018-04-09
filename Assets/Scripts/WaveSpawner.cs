@@ -28,6 +28,8 @@ public class WaveSpawner : MonoBehaviour {
     private float searchCountdown = 1f;
     public GM gm;
     public WaveUI wui;
+    [SerializeField]
+    public PlayerMovement player;
 
     private SpawnState state = SpawnState.COUNTING;
 
@@ -108,6 +110,10 @@ public class WaveSpawner : MonoBehaviour {
         Debug.Log("Spawning Wave");
         state = SpawnState.SPAWNING;
         wui.UpdateWave(nextWave + 1);
+        if (player.health < 5)
+        {
+            player.Heal(1);
+        }
         for(int i = 0; i< _wave.enemyNo; i++)
         {
             SpawnEnemy(_wave.enemy);
