@@ -28,11 +28,13 @@ public class PlayerMovement : MonoBehaviour {
     public int health;             //player health
     public bool dead;
     private Animator playerAnimator;
+
+    //Declare Properties
     private Rigidbody2D Rb2d { get; set; }
 
-    public bool Attack { get; set; }
-    public bool Jump { get; set; }
-    public bool Grounded { get; set; }
+    public bool Attack { get; set; }     //check if player has attacked
+    public bool Jump { get; set; }       //check if player has jumped
+    public bool Grounded { get; set; }   //check if player is on the ground
 
     Vector2 startPos;
     public GM gm;
@@ -67,16 +69,6 @@ public class PlayerMovement : MonoBehaviour {
         HandleMovement(horizontal);
 
 
-        
-       // HandleLayers();
-
-       
-        //HandleLayers();
-
-
-        
-        //HandleLayers();
-
         Reset();
         flip(horizontal);
     }
@@ -90,7 +82,6 @@ public class PlayerMovement : MonoBehaviour {
         {
             Grounded = false;
             Rb2d.AddForce(new Vector2(0, jump_force));
-            //playerAnimator.SetTrigger("jump");
         }
 
         playerAnimator.SetFloat("movSpeed", Mathf.Abs(horizontal));
@@ -149,7 +140,6 @@ public class PlayerMovement : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire1"))
         {
-            //playerAnimator.SetTrigger("jump");
             Jump = true;
         }
 
@@ -206,16 +196,4 @@ public class PlayerMovement : MonoBehaviour {
         Attack = false;
         Jump = false;
     }
-    /*
-    private void HandleLayers()
-    {
-        if (!grounded)
-        {
-            playerAnimator.SetLayerWeight(1, 1);
-        }
-        else
-        {
-            playerAnimator.SetLayerWeight(1, -0.1f);
-        }
-    }*/
 }
