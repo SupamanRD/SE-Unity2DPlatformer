@@ -516,22 +516,22 @@ Prefab:
         type: 2}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 805504934}
     - target: {fileID: 114310079250593530, guid: 2b6f7a90af19a6c4185963c1b64a070b,
         type: 2}
       propertyPath: gm
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 302025188}
     - target: {fileID: 114831852745831730, guid: 2b6f7a90af19a6c4185963c1b64a070b,
         type: 2}
       propertyPath: gm
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 302025188}
     - target: {fileID: 114831852745831730, guid: 2b6f7a90af19a6c4185963c1b64a070b,
         type: 2}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 805504934}
     - target: {fileID: 114642418005303890, guid: 2b6f7a90af19a6c4185963c1b64a070b,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -813,7 +813,7 @@ MonoBehaviour:
   timeBetween: 5
   waveCountdown: 0
   gm: {fileID: 302025188}
-  wui: {fileID: 0}
+  wui: {fileID: 247054804}
   player: {fileID: 805504934}
 --- !u!114 &302025188
 MonoBehaviour:
@@ -826,8 +826,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 983e312ace6914e40bbfdbcac262b54b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverUI: {fileID: 0}
-  gameWinUI: {fileID: 0}
+  gameOverUI: {fileID: 884473064}
+  gameWinUI: {fileID: 774784458}
   player: {fileID: 805504934}
 --- !u!1 &344539747
 GameObject:
@@ -1999,6 +1999,11 @@ Transform:
   m_Father: {fileID: 1721521157}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &774784458 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1418871087707370, guid: 2b6f7a90af19a6c4185963c1b64a070b,
+    type: 2}
+  m_PrefabInternal: {fileID: 247054802}
 --- !u!1 &805504933 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1385510867482484, guid: 3df9420c895faab46909b09dd1095069,
@@ -2010,6 +2015,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1744285559}
   m_Script: {fileID: 11500000, guid: a6921ecc65238eb49a70c934a03e45da, type: 3}
+--- !u!4 &805504935 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4538574476381518, guid: 3df9420c895faab46909b09dd1095069,
+    type: 2}
+  m_PrefabInternal: {fileID: 1744285559}
 --- !u!1 &837419611
 GameObject:
   m_ObjectHideFlags: 0
@@ -2119,6 +2129,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &884473064 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1769970186495516, guid: 2b6f7a90af19a6c4185963c1b64a070b,
+    type: 2}
+  m_PrefabInternal: {fileID: 247054802}
 --- !u!1001 &1015899602
 Prefab:
   m_ObjectHideFlags: 0
@@ -2591,6 +2606,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114885263427263078, guid: 4d9589c35b54a3b4cb8dfe808935e3cc,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 805504935}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d9589c35b54a3b4cb8dfe808935e3cc, type: 2}
   m_IsPrefabParent: 0
@@ -2875,7 +2895,7 @@ Prefab:
         type: 2}
       propertyPath: healthUI
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1893480046}
     - target: {fileID: 114120441547257620, guid: 3df9420c895faab46909b09dd1095069,
         type: 2}
       propertyPath: damageSources.Array.data[1]
@@ -2935,6 +2955,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4932388493837386, guid: e56450f004cd1a041bed6f54c2d22631,
     type: 2}
   m_PrefabInternal: {fileID: 1773169555}
+--- !u!114 &1893480046 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114831852745831730, guid: 2b6f7a90af19a6c4185963c1b64a070b,
+    type: 2}
+  m_PrefabInternal: {fileID: 247054802}
+  m_Script: {fileID: 11500000, guid: 8ac22989887591f4cb9861754e257657, type: 3}
 --- !u!1 &2010603256
 GameObject:
   m_ObjectHideFlags: 0

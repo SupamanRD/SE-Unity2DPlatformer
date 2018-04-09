@@ -2181,11 +2181,19 @@ MonoBehaviour:
   waves:
   - name: Eagle
     enemy: {fileID: 4257744446779750, guid: 86b7eb109cb91e44ebd2719490ca6a93, type: 2}
-    enemyNo: 1
+    enemyNo: 2
     rate: 1
   - name: Eagles
     enemy: {fileID: 4257744446779750, guid: 86b7eb109cb91e44ebd2719490ca6a93, type: 2}
-    enemyNo: 2
+    enemyNo: 3
+    rate: 3
+  - name: Eagles
+    enemy: {fileID: 4257744446779750, guid: 86b7eb109cb91e44ebd2719490ca6a93, type: 2}
+    enemyNo: 5
+    rate: 1.5
+  - name: Eagles
+    enemy: {fileID: 4257744446779750, guid: 86b7eb109cb91e44ebd2719490ca6a93, type: 2}
+    enemyNo: 7
     rate: 1.5
   spawnPoints:
   - {fileID: 557404705}
