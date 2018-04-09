@@ -215,6 +215,7 @@ MonoBehaviour:
   takingdam: 0
   damageSources:
   - PlayerAttack
+  - KillPlane
 --- !u!114 &114926780016588924
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -226,7 +227,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f084ee782cf6b644b013742b6ba43ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   updateRate: 2
   speed: 7
   fMode: 1

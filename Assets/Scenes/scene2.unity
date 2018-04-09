@@ -284,7 +284,11 @@ MonoBehaviour:
     enemyNo: 2
     rate: 1
   - name: Eagles
-    enemy: {fileID: 0}
+    enemy: {fileID: 4257744446779750, guid: 86b7eb109cb91e44ebd2719490ca6a93, type: 2}
+    enemyNo: 4
+    rate: 0.5
+  - name: Eagles!
+    enemy: {fileID: 4257744446779750, guid: 86b7eb109cb91e44ebd2719490ca6a93, type: 2}
     enemyNo: 4
     rate: 0.5
   spawnPoints:
@@ -1312,49 +1316,40 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4636483543602722, guid: 886a1a3456e51cc4e8e9aafc5f65a246, type: 2}
+    - target: {fileID: 4417706420960668, guid: 4d9589c35b54a3b4cb8dfe808935e3cc, type: 2}
       propertyPath: m_LocalPosition.x
       value: 1.17
       objectReference: {fileID: 0}
-    - target: {fileID: 4636483543602722, guid: 886a1a3456e51cc4e8e9aafc5f65a246, type: 2}
+    - target: {fileID: 4417706420960668, guid: 4d9589c35b54a3b4cb8dfe808935e3cc, type: 2}
       propertyPath: m_LocalPosition.y
       value: -2.61
       objectReference: {fileID: 0}
-    - target: {fileID: 4636483543602722, guid: 886a1a3456e51cc4e8e9aafc5f65a246, type: 2}
+    - target: {fileID: 4417706420960668, guid: 4d9589c35b54a3b4cb8dfe808935e3cc, type: 2}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4636483543602722, guid: 886a1a3456e51cc4e8e9aafc5f65a246, type: 2}
+    - target: {fileID: 4417706420960668, guid: 4d9589c35b54a3b4cb8dfe808935e3cc, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4636483543602722, guid: 886a1a3456e51cc4e8e9aafc5f65a246, type: 2}
+    - target: {fileID: 4417706420960668, guid: 4d9589c35b54a3b4cb8dfe808935e3cc, type: 2}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4636483543602722, guid: 886a1a3456e51cc4e8e9aafc5f65a246, type: 2}
+    - target: {fileID: 4417706420960668, guid: 4d9589c35b54a3b4cb8dfe808935e3cc, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4636483543602722, guid: 886a1a3456e51cc4e8e9aafc5f65a246, type: 2}
+    - target: {fileID: 4417706420960668, guid: 4d9589c35b54a3b4cb8dfe808935e3cc, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4636483543602722, guid: 886a1a3456e51cc4e8e9aafc5f65a246, type: 2}
+    - target: {fileID: 4417706420960668, guid: 4d9589c35b54a3b4cb8dfe808935e3cc, type: 2}
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 1315594758180278, guid: 886a1a3456e51cc4e8e9aafc5f65a246, type: 2}
-      propertyPath: m_Name
-      value: DuckFriend
-      objectReference: {fileID: 0}
-    - target: {fileID: 114162027378459568, guid: 886a1a3456e51cc4e8e9aafc5f65a246,
-        type: 2}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 886a1a3456e51cc4e8e9aafc5f65a246, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: 4d9589c35b54a3b4cb8dfe808935e3cc, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1481527663
 GameObject:

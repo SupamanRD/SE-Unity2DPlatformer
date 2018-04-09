@@ -19,8 +19,16 @@ public class Enemy : MonoBehaviour {
     {
         if (damageSources.Contains(other.tag))
         {
-            takingdam = true;
-            TakeDamage();
+            if(other.tag == "PlayerAttack")
+            {
+                takingdam = true;
+                TakeDamage();
+            }
+            else if(other.tag == "KillPlane")
+            {
+                Destroy(this.gameObject);
+            }
+           
         }
     }
 
